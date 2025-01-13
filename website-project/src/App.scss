@@ -1,0 +1,61 @@
+
+@mixin tfix(){
+	transform: perspective(1px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+@mixin flex( $a, $b, $c, $d ){
+	display			: flex;
+	flex-flow		  : $a $b;
+	justify-content	: $c;
+	@if $b == 'nowrap' {
+		align-items		: $d;	
+	}@else{
+		align-content	: $d;
+	}	
+}
+@mixin neo( $estado ,$br , $dis1 ){
+	color			: var(--negro);
+	transition		: all .4s ease;
+	border-radius 	: $br ;
+	
+	@if $estado == 1 {
+		background-color	: var(--white);
+		box-shadow			: 
+			$dis1    $dis1    $dis1*2 var(--main-shad),
+			$dis1*-1 $dis1*-1 $dis1*2 var(--sec-shad),
+			inset 0 0 0 transparent,
+			inset 0 0 0 transparent;
+	}@else if $estado == 2 {
+		background-color	: var(--white);
+		box-shadow			: 
+			0 0 0 transparent,
+			0 0 0 transparent,
+			inset $dis1    $dis1    $dis1*2 var(--main-shad),
+			inset $dis1*-1 $dis1*-1 $dis1*2 var(--sec-shad);
+	}
+    
+}
+
+:root{
+  --black         : #393939;
+  --white        : #ececec;
+  --main-shad   : #c9c9c9;
+  --sec-shad    : #ffffff;
+  --black-border   : #00000050;
+  
+  /* font */
+  --main-font  : 'Roboto', sans-serif;
+  
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+      --black         : #ececec;
+      --white        : #303030;
+      --main-shad   : #242424;
+      --sec-shad    : #3c3c3c;
+
+      --black-border   : #FFFFFF50;
+  }
+}
