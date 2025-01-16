@@ -117,27 +117,6 @@ a {
 		transform: scale(1);
 	}
 }
-
-@media screen and (max-width: 700px) {
-	.section_padding {
-		padding: 4rem;
-	}
-
-	.section_margin {
-		margin: 4rem;
-	}
-}
-
-@media screen and (max-width: 550px) {
-	.section_padding {
-		padding: 4rem 2rem;
-	}
-
-	.section_margin {
-		margin: 4rem 2rem;
-	}
-}
-
 .gpt5_navbar {
 	@include flex(row, nowrap, space-between, center);
 }
@@ -158,7 +137,8 @@ a {
 
 .gpt5_navbar-links_container {
 	@include flex(row, nowrap, space-between, center);
-	p{
+
+	p {
 		color: #fff;
 		font-family: var(--font-family);
 		font-weight: 500;
@@ -170,9 +150,11 @@ a {
 		cursor: pointer;
 	}
 }
-.gpt5_navbar-sign{
+
+.gpt5_navbar-sign {
 	@include flex(row, nowrap, flex-end, center);
-	p{
+
+	p {
 		color: #fff;
 		font-family: var(--font-family);
 		font-weight: 500;
@@ -184,9 +166,11 @@ a {
 		cursor: pointer;
 	}
 }
-.gpt5_navbar-menu_container{
+
+.gpt5_navbar-menu {
 	@include flex(row, nowrap, flex-end, center);
-	p{
+
+	p {
 		color: #fff;
 		font-family: var(--font-family);
 		font-weight: 500;
@@ -198,7 +182,8 @@ a {
 		cursor: pointer;
 	}
 }
-button{
+
+button {
 	padding: 0.75rem 1.5rem;
 	color: white;
 	background: #FF4820;
@@ -209,4 +194,70 @@ button{
 	border: 0;
 	outline: none;
 	cursor: pointer;
+}
+
+.gpt5_navbar-menu {
+	margin-left: 1rem;
+	display: none;
+	position: relative;
+	svg {
+		cursor: pointer;
+	}
+}
+
+.gpt5_nabvar-menu_container{
+	@include flex(column, nowrap, flex-end, flex-end);
+	text-align: end;
+	background: var(--color-footer);
+	padding: 2rem;
+	position: absolute;
+	top: 40px;
+	right: -1px;
+	margin-top: 1rem;
+	min-width: 210px;
+	border-radius: 10px;
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+
+	p {
+		margin: 1rem 0;
+	}
+}
+
+.gpt5_navbar-menu_container-links-sign {
+	display: none;
+}
+@media screen and (max-width: 550px) {
+	.section_padding {
+		padding: 4rem 2rem;
+	}
+	.section_margin {
+		margin: 4rem 2rem;
+	}
+	.gpt5_navbar-sign{
+		display: none;
+	}
+	.gpt5_navbar-menu_container-links-sign{
+		display: block;
+	}
+}
+@media screen and (max-width: 700px) {
+	.section_padding {
+		padding: 4rem;
+	}
+	.section_margin {
+		margin: 4rem;
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	.gpt5_navbar-links_container {
+		display: none;
+	}
+
+	.gpt5_navbar-menu {
+		display: flex;
+	}
+	.section_padding{
+		padding: 4rem 2rem;
+	}
 }
