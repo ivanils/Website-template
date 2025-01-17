@@ -117,6 +117,7 @@ a {
 		transform: scale(1);
 	}
 }
+// NAVBAR
 .gpt5_navbar {
 	@include flex(row, nowrap, space-between, center);
 }
@@ -186,7 +187,7 @@ a {
 button {
 	padding: 0.75rem 1.5rem;
 	color: white;
-	background: #FF4820;
+	background: var(--button);
 	border-radius: 5px;
 	font-weight: 500;
 	line-height: 25px;
@@ -194,6 +195,11 @@ button {
 	border: 0;
 	outline: none;
 	cursor: pointer;
+	&:hover{
+		background-color: white;
+		color: var(--button);
+		transition: 0.2s ease-in;
+	}
 }
 
 .gpt5_navbar-menu {
@@ -226,9 +232,172 @@ button {
 .gpt5_navbar-menu_container-links-sign {
 	display: none;
 }
+// HEADER
+.gpt5_header{
+	display: flex;
+	padding: 4rem 0;
+}
+.gpt5_header-content{
+	flex: 1;
+	@include flex(column, nowrap, center, flex-start);
+	margin-right: 5rem;
+	h1{
+		font-weight: 800;
+		font-size: 62px;
+		line-height: 75px;
+		letter-spacing: -0.04em;
+	}
+	p{
+		color: var(--color-text);
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 27px;
+		margin-top: 1.5rem;
+	}
+}
+.gpt5_header-content_input{
+	width: 100%;
+	margin: 2rem 0 1rem;
+	@include flex(row, nowrap, space-between, center);
+	input{
+		border-radius: 5px 0 0 5px;
+		color: white;
+		border: 2px solid var(--color-footer);
+		background-color: var(--color-footer);
+		font-size: 20px;
+		line-height: 27px;
+		min-height: 50px;
+		width: 100%;
+		flex: 2;
+		padding: 0 1rem;
+		outline: none;
+	}
+	button{
+		flex: 0.6;
+		width: 100%;
+		font-size: 20px;
+		line-height: 27px;
+		min-height: 50px;
+		border-radius: 0px 10px 10px 0;
+		transition: 0.2s ease-in;
+		font-weight: 500;
+		&:hover{
+			font-weight: 900;
+		}
+	}
+}
+.gpt5_header-content_people{
+	width: 100%;
+	@include flex(row, nowrap, flex-start, center);
+	margin-top: 2rem;
+	img{
+		width: 181.79px;
+		height: 38px;
+	}
+	p{
+		margin: 0 0 0 1rem;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 38px;
+		color: white;
+		text-align: center;
+	}
+}
+.gpt5_header-image{
+	flex: 1;
+	@include flex(row, nowrap, center, center);
+	img{
+		height: 100%;
+		width: 100%;
+	}
+}
+// BRAND SECTION
+.gpt5_brand{
+	@include flex(row, wrap, center, center);
+	div{
+		flex: 1;
+		max-width: 150px;
+		min-width: 120px;
+		margin:1rem;
+		@include flex(row, nowrap, center, center);
+	}
+}
+// WHAT GPT5
+.gpt5_what{
+	@include flex(column, nowrap, center, center);
+	padding: 2rem;
+	background: var(--color-footer);
+	background: ;
+}
+// MEDIA QUERIES
+@media screen and (max-width: 950px) {
+	.gpt5_navbar-links_container {
+		display: none;
+	}
+
+	.gpt5_navbar-menu {
+		display: flex;
+	}
+	.section_padding{
+		padding: 4rem 2rem;
+	}
+	.gpt5_header{
+		flex-direction: column;
+	}
+	.gpt5_header-content{
+		margin: 0 0 3rem;
+	}
+}
+@media screen and (max-width: 700px) {
+	.section_padding {
+		padding: 4rem;
+	}
+	.section_margin {
+		margin: 4rem;
+	} 
+	.gpt5_header-content_input{
+		input,button{
+			font-size: 14px;
+			line-height: normal;
+		}
+	}
+}
+@media screen and (max-width: 670px) {
+	.gpt5_header{
+		h1{
+			font-size: 48px;
+			line-height: 60px;
+		}
+		p{
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+	.gpt5_header-content_people{
+		flex-direction: column;
+		p{
+			margin: 0;
+		}
+	}
+	.gpt5_header-content_input{
+		input, button{
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+	.gpt5_header-content_input{
+		button{
+			padding: 0rem 1.5rem;
+		}
+	}
+}
 @media screen and (max-width: 550px) {
 	.section_padding {
-		padding: 4rem 2rem;
+		padding: 2rem;
+	}
+	.gpt5_header.section_padding{
+		padding: 2rem 0;
 	}
 	.section_margin {
 		margin: 4rem 2rem;
@@ -239,25 +408,23 @@ button {
 	.gpt5_navbar-menu_container-links-sign{
 		display: block;
 	}
+	
 }
-@media screen and (max-width: 700px) {
-	.section_padding {
-		padding: 4rem;
+@media screen and (max-width:490px) {
+	.gpt5_header{
+		h1{
+			font-size: 36px;
+			line-height: 48px;
+		}
+		p{
+			font-size: 14px;
+			line-height: 24px;
+		}
 	}
-	.section_margin {
-		margin: 4rem;
-	}
-}
-
-@media screen and (max-width: 1050px) {
-	.gpt5_navbar-links_container {
-		display: none;
-	}
-
-	.gpt5_navbar-menu {
-		display: flex;
-	}
-	.section_padding{
-		padding: 4rem 2rem;
+	.gpt5_header-content_input{
+		input, button{
+			font-size: 14px;
+			line-height: 18px;
+		}
 	}
 }
