@@ -325,13 +325,186 @@ button {
 }
 // WHAT GPT5
 .gpt5_what{
-	@include flex(column, nowrap, center, center);
+	@include flex(column, nowrap, center, flex-start);
 	padding: 2rem;
 	background: var(--color-footer);
-	background: ;
+	/* ff 3.6+ */
+    background:-moz-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+.gpt5_what-feature{
+	@include flex(row, nowrap, center, center);
+	.gpt5_feature-container_feature{
+		margin: 0;
+	}
+	.gpt5_feature-container_feature-text{
+		margin: 0;
+		max-width: 700px;
+	}
+}
+.gpt5_what-heading{
+	width: 100%;
+	@include flex(row, wrap, space-between,center);
+	align-items: center;
+	margin: 4rem 0 4rem;
+	h1{
+		font-family: var(--font-family);
+		font-size: 34px;
+		line-height: 45px;
+		font-weight: 800;
+		max-width: 510px;
+		font-style: normal;
+	}
+	p{
+		font-style: normal;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 30px;
+		color: var(--color-subtext);
+		cursor: pointer;
+	}
+}
+.gpt5_what-container{
+	@include flex(row, wrap, center, center);
+	display: flex;
+	margin-top: 2rem;
+}
+// Feature
+.gpt5_features-container_feature{
+	flex: 1;
+	width: 100%;
+	@include flex(column, nowrap, space-between, flex-start);
+	margin: 1rem;
+	&.row{
+		@include flex(row, nowrap, center, flex-start);
+	}
+}
+.gpt5_features-container_feature-title{
+	flex: 1;
+	max-width: 180px;
+	margin-right: 2rem;
+	div{
+		width: 38px;
+		height: 3px;
+		background:var(--gradient-bar);
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+		margin: 0.25rem;
+	}
+	h1{
+		font-family: var(--font-family);
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 800;
+		font-style: normal;
+		letter-spacing: -0.04rem;
+		color: white;
+	}
+}
+.gpt5_features-container_feature-text{
+	flex: 2;
+	max-width: 390px;
+	display: flex;
+	p{
+		color: var(--color-text);
+		font-family: var(--font-family);
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 24px;
+	}
+}
+.gpt5_features{
+	width: 100%;
+	@include flex(row, nowrap, space-between, flex-start);
+}
+.gpt5_features-heading{
+	flex: 1;
+	@include flex(column, nowrap, center, flex-start);
+	text-align: left;
+	margin-right: 5rem;
+	h1{
+		font-family: var(--font-family);
+		font-size: 34px;
+		line-height: 45px;
+		font-weight: 800;
+		font-style: normal;
+	}
+	p{
+		font-style: normal;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 30px;
+		color: var(--color-subtext);
+		cursor: pointer;
+		margin-top: 2rem;
+	}
+}
+.gpt5_features-container{
+	flex: 1.5;
+	@include flex(column, wrap, flex-start, center);
+}
+
+// POSSIBILITY
+.gpt5_possibility{
+	@include flex(row, nowrap, center, flex-end);
+}
+.gpt5_possibility-img{
+	flex: 1;
+	@include flex(row, nowrap, flex-start, center);
+	margin-right: 2rem;
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+.gpt5_possibility-content{
+	flex: 1;
+	@include flex(column, nowrap, flex-end, flex-start);
+	h4{
+		font-family: var(--font-family);
+		font-size: 16px;
+		line-height: 30px;
+		font-style: normal;
+		color: var(--color-text);
+		&:last-child{
+			cursor: pointer;
+			color: var(--color-subtext);
+			margin-top: 1rem;
+		}
+	}
+	h1{
+		font-family: var(--font-family);
+		font-size: 34px;
+		line-height: 45px;
+		font-weight: 800;
+		margin: 0.75rem 0;
+	}
+	p{
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 30px;
+		cursor: pointer;
+		margin-bottom: 2rem;
+		color: white;
+	}
+}
+
+
 // MEDIA QUERIES
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 990px) {
 	.gpt5_navbar-links_container {
 		display: none;
 	}
@@ -347,6 +520,28 @@ button {
 	}
 	.gpt5_header-content{
 		margin: 0 0 3rem;
+	}
+	.gpt5_features{
+		@include flex(column, nowrap, center, center);
+	}
+	.gpt5_features-heading{
+		margin: 0 0 2rem 0;
+		@include flex(column, nowrap, center, flex-start);
+		padding: 0 4rem;
+	}
+	.gpt5_features-container{
+		width: 100%;
+		padding: 0 4rem;
+	}
+	.gpt5_possibility{
+		@include flex(column, nowrap, center, center);
+		padding: 0 6rem;
+	}
+	.gpt5_possibility-img{
+		margin: 1rem 0;
+	}
+	.gpt5_possibility-content{
+		margin: 2rem 0 0 0;
 	}
 }
 @media screen and (max-width: 700px) {
@@ -408,7 +603,35 @@ button {
 	.gpt5_navbar-menu_container-links-sign{
 		display: block;
 	}
-	
+	.gpt5_features-container_feature-title{
+		h1{
+			font-size: 14px;
+			line-height: 22px;
+		}
+		p{
+			font-size: 12px;
+			line-height: 20px;
+		}
+	}
+	.gpt5_what-container{
+		flex-direction: column;
+	}
+	.gpt5_features-container_feature{
+		margin: 1rem 0;
+		&.row{
+			flex-direction: column;
+		}
+	}
+	.gpt5_features-heading{
+		padding: 0 0 0 2rem;
+		h1{
+			font-size: 28px;
+			line-height: 38px;
+		}
+	}
+	.gpt5_features-container{
+		padding: 0 0 0 2rem;
+	}
 }
 @media screen and (max-width:490px) {
 	.gpt5_header{
@@ -426,5 +649,13 @@ button {
 			font-size: 14px;
 			line-height: 18px;
 		}
+	}
+}
+@media screen and (max-width:400px) {
+	.gpt5_features-heading{
+		padding: 0;
+	}
+	.gpt5_features-container{
+		padding: 0;
 	}
 }

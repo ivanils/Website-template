@@ -6,18 +6,18 @@ const WhatGPT5 = () => {
   return (
     <div className='gpt5_what section_margin' id='wGPT5'>
       <div className='gpt5_what-feature'>
-        <Feature/>
+        <Feature title="What is GPT5" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
       </div>
       <div className='gpt5_what-heading'>
-        <h1 className='gradient-text'>
+        <h1 className='gradient_text'>
           The possibilites are beyond your imagination
         </h1>
         <p>Explore the library</p>
       </div>
       <div className='gpt5_what-container'>
-        <Feature/>
-        <Feature/>
-        <Feature/>
+        <Feature title="Chatbots" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+        <Feature title="Knwoledgebase" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+        <Feature title="Education" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
       </div>
     </div>
   )
